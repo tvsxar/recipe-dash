@@ -1,6 +1,6 @@
 import api from "./axios";
 
-export const getRandomMeals = async () => {
+export const getRandomRecipes = async () => {
   let meals = [];
   let count = 0;
 
@@ -22,7 +22,7 @@ export const getRandomMeals = async () => {
   return meals;
 };
 
-export const getMealDetails = async (id) => {
+export const getRecipeDetails = async (id) => {
   try {
     const response = await api.get(`/lookup.php?i=${id}`);
     return response.data.meals[0];
@@ -31,7 +31,7 @@ export const getMealDetails = async (id) => {
   }
 };
 
-export const searchMealsByName = async (name) => {
+export const searchRecipesByName = async (name) => {
   try {
     const response = await api.get(`/search.php?s=${name}`);
     return response.data.meals || [];
@@ -49,7 +49,7 @@ export const getCategories = async () => {
   }
 };
 
-export const getMealsByCategory = async (category) => {
+export const getRecipesByCategory = async (category) => {
   try {
     const response = await api.get(`/filter.php?c=${category}`);
     return response.data.meals;
