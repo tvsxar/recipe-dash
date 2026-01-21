@@ -39,3 +39,21 @@ export const searchMealsByName = async (name) => {
     console.error("Error getting meals by name:", err);
   }
 };
+
+export const getCategories = async () => {
+  try {
+    const response = await api.get("/list.php?c=list");
+    return response.data.meals.map((cat) => cat.strCategory);
+  } catch (err) {
+    console.error("Error getting categories:", err);
+  }
+};
+
+export const getMealsByCategory = async (category) => {
+  try {
+    const response = await api.get(`/filter.php?c=${category}`);
+    return response.data.meals;
+  } catch (err) {
+    console.error("Error getting meals by category:", err);
+  }
+};
