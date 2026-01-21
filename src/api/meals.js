@@ -21,3 +21,21 @@ export const getRandomMeals = async () => {
 
   return meals;
 };
+
+export const getMealDetails = async (id) => {
+  try {
+    const response = await api.get(`/lookup.php?i=${id}`);
+    return response.data.meals[0];
+  } catch (err) {
+    console.error("Error getting meal details:", err);
+  }
+};
+
+export const searchMealsByName = async (name) => {
+  try {
+    const response = await api.get(`/search.php?s=${name}`);
+    return response.data.meals || [];
+  } catch (err) {
+    console.error("Error getting meals by name:", err);
+  }
+};
