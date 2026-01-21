@@ -1,12 +1,16 @@
 <script>
+    import RecipesGrid from '../components/RecipesGrid.vue';
 export default {
     name: 'Home',
+    components: {
+        RecipesGrid
+    }
 }
 </script>
 
 <template>
     <div>
-        Home Page
+        <RecipesGrid />
     </div>
 </template>
 
