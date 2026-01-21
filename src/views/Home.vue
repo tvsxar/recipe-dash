@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div class="mx-auto py-4 px-4 sm:px-12 lg:px-25">
         <RecipesGrid />
     </div>
 </template>

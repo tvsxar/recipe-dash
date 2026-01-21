@@ -15,7 +15,7 @@ export default {
   <div class="min-h-screen flex flex-col">
     <Navbar />
 
-    <router-view class="flex-1 flex flex-col bg-[#1a1a1a]" />
+    <router-view class="flex-1 flex flex-col py-6" />
 
     <Footer />
   </div>
