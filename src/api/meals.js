@@ -5,7 +5,7 @@ export const getRandomRecipes = async () => {
   let count = 0;
 
   try {
-    while (meals.length < 10 && count < 20) {
+    while (meals.length < 12 && count < 20) {
       const response = await api.get("/random.php");
       const meal = response.data.meals[0];
 
