@@ -4,20 +4,23 @@ import RecipeCard from '../components/RecipeCard.vue'
 export default {
     name: 'RecipesGrid',
     components: { RecipeCard },
-    data() {
-        return {
-            recipes: [{}, {}]
+    computed: {
+        recipes() {
+            return this.$store.getters.randomRecipeCards;
         }
+    },
+    mounted() {
+        this.$store.dispatch('fetchRandomRecipes');
     }
 }
 </script>
 
 <template>
-    <div class="p-4 sm:p-8">
+    <div>
         <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">Random Recipes</h2>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <RecipeCard v-for="recipe in recipes" :key="recipe.idMeal" :meal="recipe" />
+        <div class="grid gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center">
+            <RecipeCard v-for="recipe in recipes" :key="recipe.idMeal" :recipe="recipe" />
         </div>
     </div>
 </template>
