@@ -6,13 +6,15 @@ import {
   getRecipesByCategory,
 } from "../api/meals";
 
-export const fetchRandomRecipes = async ({ commit }) => {
+export const fetchRandomRecipes = async ({ commit, state }) => {
+  if (state.loading) return;
+
   commit("setLoading", true);
 
   try {
     const recipes = await getRandomRecipes();
 
-    commit("setRandomRecipes", recipes);
+    commit("setRandomRecipes", recipes || []);
   } catch (err) {
     console.error("Error fetching random recipes:", err);
   } finally {
