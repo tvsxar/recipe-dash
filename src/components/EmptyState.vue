@@ -1,12 +1,6 @@
 <script>
 export default {
-    name: 'EmptyState',
-    props: {
-        recipes: {
-            type: Array,
-            required: true
-        }
-    }
+    name: 'EmptyState'
 }
 </script>
 
