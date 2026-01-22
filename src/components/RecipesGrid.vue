@@ -4,14 +4,10 @@ import RecipeCard from '../components/RecipeCard.vue'
 export default {
     name: 'RecipesGrid',
     components: { RecipeCard },
-    computed: {
-        recipes() {
-            return this.$store.state.randomRecipes;
-        }
-    },
-    mounted() {
-        if (this.recipes.length === 0) {
-            this.$store.dispatch('fetchRandomRecipes');
+    props: {
+        recipes: {
+            type: Array,
+            default: () => []
         }
     }
 }

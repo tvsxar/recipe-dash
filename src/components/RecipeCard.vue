@@ -18,9 +18,8 @@ export default {
         <img :src="recipe.strMealThumb" :alt="recipe.strMeal" class="w-full h-40 object-cover" />
 
         <div class="p-4 flex flex-col flex-1">
-            <!-- Заголовок адаптивный: маленький на мобилке, больше на больших экранах -->
             <h3 class="text-white font-bold text-base sm:text-lg md:text-xl mb-2">{{ recipe.strMeal }}</h3>
-            <!-- Подпись тоже адаптивная -->
+
             <p class="text-gray-400 text-xs sm:text-sm md:text-base mt-auto">
                 {{ recipe.strCategory }} • {{ recipe.strArea }}
             </p>

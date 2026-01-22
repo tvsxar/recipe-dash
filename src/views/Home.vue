@@ -10,6 +10,14 @@ export default {
     computed: {
         loading() {
             return this.$store.state.loading;
+        },
+        recipes() {
+            return this.$store.state.randomRecipes;
+        }
+    },
+    mounted() {
+        if (this.recipes.length === 0) {
+            this.$store.dispatch('fetchRandomRecipes');
         }
     }
 }
@@ -22,7 +30,7 @@ export default {
         </div>
 
         <div v-else class="mx-auto py-4 px-4 sm:px-12 lg:px-25">
-            <RecipesGrid />
+            <RecipesGrid :recipes="recipes" />
         </div>
     </div>
 </template>
