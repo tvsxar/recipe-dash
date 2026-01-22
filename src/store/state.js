@@ -1,3 +1,8 @@
 export default {
-    meals: ['Salmon']
-}
+  randomRecipes: [],
+  currentRecipe: null,
+  searchResults: [],
+  categories: [],
+  categoryRecipes: [],
+  loading: false,
+};
