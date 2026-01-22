@@ -29,7 +29,7 @@ export default {
             <Loading />
         </div>
 
-        <div v-else class="mx-auto py-4 px-4 sm:px-12 lg:px-25">
+        <div v-else class="py-4 px-4 sm:px-12 lg:px-25">
             <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                 Recipes
             </h2>
