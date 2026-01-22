@@ -6,11 +6,13 @@ export default {
     components: { RecipeCard },
     computed: {
         recipes() {
-            return this.$store.getters.randomRecipeCards;
+            return this.$store.state.randomRecipes;
         }
     },
     mounted() {
-        this.$store.dispatch('fetchRandomRecipes');
+        if (this.recipes.length === 0) {
+            this.$store.dispatch('fetchRandomRecipes');
+        }
     }
 }
 </script>
