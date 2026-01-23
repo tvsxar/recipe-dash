@@ -8,6 +8,10 @@ export default {
         recipes: {
             type: Array,
             default: () => []
+        },
+        selectedCategory: {
+            type: String,
+            default: null
         }
     }
 }
@@ -15,7 +19,7 @@ export default {
 
 <template>
     <div class="grid gap-6 md:gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        <RecipeCard v-for="recipe in recipes" :key="recipe.idMeal" :recipe="recipe" />
+        <RecipeCard v-for="recipe in recipes" :key="recipe.idMeal" :recipe="recipe" :selectedCategory="selectedCategory" />
     </div>
 </template>
 

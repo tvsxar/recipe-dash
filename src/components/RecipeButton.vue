@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-    <div v-if="recipeDetails.strYoutube" class="w-full max-w-7xl mx-auto px-4 sm:px-12 lg:px-25 py-4">
+    <div v-if="recipeDetails && recipeDetails.strYoutube" class="w-full max-w-7xl mx-auto px-4 sm:px-12 lg:px-25 py-4">
         <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">Video</h2>
 
         <a :href="recipeDetails.strYoutube" target="_blank"
