@@ -5,6 +5,10 @@ export default {
         recipe: {
             type: Object,
             required: true
+        },
+        selectedCategory: {
+            type: String,
+            default: null
         }
     }
 }
@@ -20,7 +24,11 @@ export default {
         <div class="p-4 flex flex-col flex-1">
             <h3 class="text-white font-bold text-base sm:text-lg md:text-xl mb-2">{{ recipe.strMeal }}</h3>
 
-            <p class="text-gray-400 text-xs sm:text-sm md:text-base mt-auto">
+            <p v-if="selectedCategory" class="text-gray-400 text-xs sm:text-sm md:text-base mt-auto">
+                Category: {{ selectedCategory }}
+            </p>
+            
+            <p v-else class="text-gray-400 text-xs sm:text-sm md:text-base mt-auto">
                 {{ recipe.strCategory }} • {{ recipe.strArea }}
             </p>
         </div>
