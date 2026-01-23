@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-    <div
+    <router-link :to="`/about/${recipe.idMeal}`"
         class="bg-[#1f1f1f] rounded-xl overflow-hidden shadow-lg hover:scale-101 transition transform cursor-pointer
            border border-gray-700 hover:border-[#FFE08A] hover:drop-shadow-[0_0_6px_rgba(255,224,138,0.6)] flex flex-col">
 
@@ -24,7 +24,7 @@ export default {
                 {{ recipe.strCategory }} • {{ recipe.strArea }}
             </p>
         </div>
-    </div>
+    </router-link>
 </template>
 
 <style></style>
